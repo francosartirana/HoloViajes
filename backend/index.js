@@ -8,8 +8,18 @@ const port = process.env.PORT_BACKEND || 5000;
 app.use(cors());
 app.use(express.json());
 
-let usuarioArray = [];
+app.get('/', (req, res) => {
+    res.send('Hola desde el backend');
+});
 
+
+app.listen(port, () => {
+    console.log(`Servidor corriendo en el puerto http://localhost:${port}`);
+});
+
+/*
+let usuarioArray = [];
+let idUsers = 1;
 const usuarios = {
     nombre: '',
     apellido: '',
@@ -20,12 +30,6 @@ const usuarios = {
     password: '',
     direccion: '',
 };
-
-let idUsers = 1;
-
-app.get('/', (req, res) => {
-    res.send('Hola desde el backend');
-});
 
 app.post('/usuarios', (req, res) => {
     const usuario = req.body;
@@ -70,9 +74,6 @@ app.delete('/usuarios/:id', (req, res) => {
     const eliminado = usuarioArray.splice(idx, 1);
     res.json(eliminado);
 });
-
-app.listen(port, () => {
-    console.log(`Servidor corriendo en el puerto http://localhost:${port}`);
-});
+*/
 
 

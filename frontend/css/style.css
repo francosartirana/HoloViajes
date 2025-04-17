@@ -1,0 +1,21 @@
+.bgcolor {
+    background-color: red;
+}
+
+.cabecera {
+    justify-items: center;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: aqua;
+    text-align: center;
+    height: 400px;
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+}

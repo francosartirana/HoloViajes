@@ -1,5 +1,6 @@
 require('dotenv').config();
-
+const connectDB = require('./db');
+const usuarioRoute = require('./routes/usuarioRoute');
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -8,11 +9,13 @@ const port = process.env.PORT_BACKEND || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.use('/usuarios', usuarioRoute);
+
 app.get('/', (req, res) => {
     res.send('Hola desde el backend');
 });
 
-
+connectDB();
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto http://localhost:${port}`);
 });

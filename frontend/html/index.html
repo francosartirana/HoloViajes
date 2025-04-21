@@ -3,32 +3,49 @@
 <head>
     <title>HoloViajes</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
 </head>
 <body>
-    <header class="cabecera">
-        <h1>HoloViajes</h1>
-        <img src="../img/logo.png" alt="" class="logo">
-    </header>
-    <div class="contenedor">
-        <div class="tarjeta">
-            <P>
-                Planeta Miller
-            </P>
+    <header>
+        <div class="navbar">
+            <div class="logo">Logo.penege</div>
+            <ul class="links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html">Nosotros</a></li>
+                <li><a href="index.html">Destinos</a></li>
+                <li><a href="index.html">Contacto</a></li>
+            </ul>
+            <a href="#" class="botonlogin">Iniciar Sesion</a>
+            <div class="botondespliegue">
+            <i class="fa-solid fa-bars"></i>
+            </div> 
         </div>
-        <div class="tarjeta">
-            <P>
-                Planeta Edmunds
-            </P>
+        
+        <div class="menuhamburguesa">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html">Nosotros</a></li>
+            <li><a href="index.html">Destinos</a></li>
+            <li><a href="index.html">Contacto</a></li>
+            <li><a href="#" class="botonlogin">Iniciar Sesion</a></li>
         </div>
-        <div class="tarjeta">
-            <P>
-                Planeta Mann
-            </P>
-        </div>
-    </div>
-    <footer>
-        <h3>futer</h3>
-    </footer>
 
+    </header>
+
+    <script>
+        const botonDespliegue = document.querySelector('.botondespliegue')
+        const botonDespliegueIcono = document.querySelector('.botondespliegue i')
+        const menuHamburguesa = document.querySelector('.menuhamburguesa')
+
+        botonDespliegue.onclick = function () {
+            menuHamburguesa.classList.toggle('abierto')
+            const estaAbierto = menuHamburguesa.classList.contains('abierto')
+
+            botonDespliegueIcono.classList = estaAbierto
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+
+    
 </body>
 </html>

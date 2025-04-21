@@ -1,21 +1,112 @@
-.bgcolor {
-    background-color: red;
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.cabecera {
-    justify-items: center;
+body {
+    height: 100vh;
+    background-color: rgb(7, 15, 32);
+    background-image: url(../img/wpp.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.contenedor {
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color:#fff ;
+    font-size: 1.1rem;
+}
+
+a:hover {
+    color: rgb(194, 103, 0);
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .botondespliegue {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/*Menu Hamburguesa */
+
+.menuhamburguesa {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menuhamburguesa.abierto {
+    height: 250px;
+}
+
+.menuhamburguesa li{
+    padding: 15px;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.tarjeta {
-    background-color: aqua;
-    text-align: center;
-    height: 400px;
-    width: 250px;
-    padding: 10px;
-    margin: 10px;
+/* RESPOSIVE */
+
+@media(max-width: 992px) {
+    .navbar .links,
+    .navbar .botonlogin{
+        display: none;
+    }
+
+    .navbar .botondespliegue{
+        display: block;
+    }
+
+    .menuhamburguesa {
+        display: block;
+    }
+}
+
+@media(max-width: 576px) {
+    .menuhamburguesa {
+        left: 2rem;
+        width:unset;
+    }
 }

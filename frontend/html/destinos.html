@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HoloViajes</title>
+    <link rel="stylesheet" href="../css/style-destinos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logoContenedor"><img src="../img/logo2.png" alt="logo" class="logo"></div>
+            <ul class="links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="index.html">Nosotros</a></li>
+                <li><a href="index.html">Contacto</a></li>
+            </ul>
+            <a href="#" class="botonlogin">Iniciar Sesion</a>
+            <div class="botondespliegue">
+            <i class="fa-solid fa-bars"></i>
+            </div> 
+        </div>
+        
+        <div class="menuhamburguesa">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="destinos.html">Destinos</a></li>
+            <li><a href="index.html">Nosotros</a></li>
+            <li><a href="index.html">Contacto</a></li>
+            <li><a href="#" class="botonlogin">Iniciar Sesion</a></li>
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+        <section class="destinos">
+            <section class="destino edmunds">
+                <h2 class="nombreDestino">Planeta Edmunds</h2>
+                <p class="descDestino">Actualmente el planeta mas habitable de las opciones disponibles. Su clima es árido con fuertes vientos, pero con zonas comodas y seguras para los asentamientos.</p>
+            </section>
+            <section class="destino mann">
+                <h2 class="nombreDestino">Planeta Mann</h2>
+                <p class="descDestino">Si tu clima favorito es el frío, este es tu destino. Aunque su clima helado es muy hostil, se aseguraron diversas zonas en las cuales se puedieron establecer colonias libres de peligros.</p>
+            </section>
+            <section class="destino miller">
+                <h2 class="nombreDestino">Planeta Miller</h2>
+                <p class="descDestino">Ofrecemos una rápida vista periferica desede las lejanías del planeta con fines meramente visuales. Su distorsión del espacio tiempo no permite mucho mas que eso.</p>
+            </section>
+            <section class="destino paquetes">
+                <h2 class="nombreDestino">Destino 1</h2>
+                <p class="descDestino">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus enim cumque nesciunt, impedit ad officia quisquam iure nostrum ducimus laudantium ullam? Architecto consectetur sapiente atque omnis deserunt similique animi deleniti.</p>
+            </section>
+        </section>
+    </div>
+
+
+
+
+    <script>
+        const botonDespliegue = document.querySelector('.botondespliegue')
+        const botonDespliegueIcono = document.querySelector('.botondespliegue i')
+        const menuHamburguesa = document.querySelector('.menuhamburguesa')
+
+        botonDespliegue.onclick = function () {
+            menuHamburguesa.classList.toggle('abierto')
+            const estaAbierto = menuHamburguesa.classList.contains('abierto')
+
+            botonDespliegueIcono.classList = estaAbierto
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+    
+    
+</body>
+</html>

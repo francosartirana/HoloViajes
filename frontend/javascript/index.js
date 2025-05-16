@@ -33,3 +33,33 @@ botonFiltrar.addEventListener ("click", () => {
 });
 
 
+/*
+
+            <script>
+                document.getElementById("usuario").addEventListener("click", async () => {
+                try {
+                    const response = await fetch("http://localhost:5000/usuarios");
+                    const data = await response.json();
+
+                    data.forEach(user => {
+                        document.getElementById("nombre").textContent = user.nombreUsuario;
+                        document.getElementById("apellido").textContent = user.apellidoUsuario;
+                        document.getElementById("documento").textContent = user.documento;
+                        document.getElementById("fechaNacimiento").textContent = user.fechaNacimiento;
+                        document.getElementById("telefono").textContent = user.telefono;
+                        document.getElementById("email").textContent = user.email;
+                        document.getElementById("password").textContent = user.password;
+                        document.getElementById("direccion").textContent = user.direccion;
+                        document.getElementById("administrador").textContent = user.administrador;
+                    });
+                } catch (error) {
+                    console.error("Error al obtener los usuarios:", error);
+                }
+            });
+            </script>
+
+
+
+
+
+*/

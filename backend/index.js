@@ -20,7 +20,10 @@ app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto http://localhost:${port}`);
 });
 
+
+
 /*
+
 let usuarioArray = [];
 let idUsers = 1;
 const usuarios = {

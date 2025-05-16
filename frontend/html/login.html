@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style-login.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+        <div class="logoContenedor"><img src="../img/logo2.png" alt="logo" class="logo"></div>
+        <ul class="links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="destinos.html">Destinos</a></li>
+            <li><a href="index.html">Nosotros</a></li>
+            <li><a href="index.html">Contacto</a></li>
+        </ul>
+        <a href="login.html" class="botonlogin">Iniciar Sesion</a>
+        <div class="botondespliegue">
+        <i class="fa-solid fa-bars"></i>
+        </div> 
+    </div>
+    
+    <div class="menuhamburguesa">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destinos.html">Destinos</a></li>
+        <li><a href="index.html">Nosotros</a></li>
+        <li><a href="index.html">Contacto</a></li>
+        <li><a href="#" class="botonlogin">Iniciar Sesion</a></li>
+    </div>
+     
+  </header>
+
+  <div class="contenedor">
+    <div class="formUsuarioDiv">
+    <form id="formUsuario" class="formUsuario">
+        <input type="text" name="nombreUsuario" placeholder="Nombre" required><br>
+        <input type="text" name="apellidoUsuario" placeholder="Apellido" required><br>
+        <input type="text" name="documento" placeholder="Documento" required><br>
+        <input type="date" name="fechaNacimiento" required><br>
+        <input type="text" name="telefono" placeholder="Teléfono" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="password" name="password" placeholder="Contraseña" required><br>
+        <input type="text" name="direccion" placeholder="Dirección" required><br>
+        <select name="administrador" required>
+          <option value="">¿Es administrador?</option>
+          <option value="true">Sí</option>
+          <option value="false">No</option>
+        </select><br><br>
+        <button type="submit">Crear usuario</button>
+      </form>
+    </div>
+  </div>
+
+      <script>
+      document.getElementById("formUsuario").addEventListener("submit", async (e) => {
+        e.preventDefault();
+      
+        const formData = new FormData(e.target);
+        const userData = Object.fromEntries(formData.entries());
+      
+        userData.administrador = userData.administrador === "true";
+      
+        try {
+          const response = await fetch("http://localhost:5000/usuarios", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData)
+          });
+      
+          if (response.ok) {
+            alert("Usuario creado correctamente");
+            e.target.reset();
+          } else {
+            const errorData = await response.json();
+            console.error("Error del servidor:", errorData);
+            alert("Error al crear el usuario");
+          }
+        } catch (error) {
+          console.error("Error de red:", error);
+          alert("Error de conexión al servidor");
+        }
+      });
+      </script>
+</body>
+</html>
+

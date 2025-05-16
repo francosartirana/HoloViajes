@@ -31,6 +31,11 @@ header {
     margin-top: 50px;
 }
 
+.contenedor {
+    display: flex;
+    justify-content: center;
+}
+
 .logo{
     border-radius: 10px;
 }
@@ -62,6 +67,49 @@ header {
     display: none;
 }
 
+.formUsuarioDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+}
+
+.formUsuario {
+    margin-top: 100px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+}
+
+.formUsuario input {
+    padding: 10px;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 0px;
+    width: 250px;
+}
+
+.formUsuario button {
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    cursor: pointer;
+}
+
+.formUsuario select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    cursor: pointer;
+    width: 250px;
+}
 /*Menu Hamburguesa */
 
 .menuhamburguesa {
@@ -89,68 +137,6 @@ header {
     align-items: center;
     justify-content: center;
 }
-
-
-/*CUERPO*/
-
-.contenedor {
-    display: flex;
-    justify-content: center;
-}
-
-.contenedorFiltrador {
-    max-width: 1200px;
-    width: 100%;
-    margin-top: 150px;
-    padding: 100px;
-    gap: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    background-color: rgb(13, 29, 61);
-}
-
-.filtros {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    gap: 50px;
-}
-
-.tituloFiltro {
-    font-size: 17px;
-    text-shadow: 0px 0px 8px #000;
-}
-
-.seleccionador {
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: beige;
-}
-
-.filtrar{
-    padding: 10px 20px;
-    border: 0px;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-    background-color:  rgb(33, 76, 161) ;
-    transition: scale 0.3s ease, background-color 0.3s ease;
-}
-
-.filtrar:hover {
-    scale: 1.1;
-    box-shadow: 0px 0px 10px #000;
-    background-color:rgb(5, 56, 158);
-}
-
-.resultados {
-    padding: 100px;
-}
-
 
 
 /* RESPOSIVE */

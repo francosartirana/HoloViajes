@@ -12,12 +12,6 @@ botonDespliegue.onclick = function () {
             : 'fa-solid fa-bars'
 }
 
-
-
-
-
-
-
 const botonFiltrar = document.getElementById("filtrar")
 const destinos = document.getElementById("planetas");
 const fechas = document.getElementById("fechas");
@@ -31,8 +25,6 @@ botonFiltrar.addEventListener ("click", () => {
     destinoElegido.textContent = destinoSeleccionado;
     fechaElegida.textContent = fechaSeleccionada;
 });
-
-
 
 
 /*

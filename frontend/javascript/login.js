@@ -1,8 +1,54 @@
+// Función para validar el email
+function validarEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
+// Función para validar la contraseña
+function validarPassword(password) {
+  // Mínimo 8 caracteres, al menos una letra mayúscula, una minúscula, un número y permite caracteres especiales
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\-_@#$%^&+=]{8,}$/;
+  return regex.test(password);
+}
+
+// Función para validar el teléfono
+function validarTelefono(telefono) {
+  const regex = /^\d{10}$/; // 10 dígitos numéricos
+  return regex.test(telefono);
+}
+
+// Función para validar el documento
+function validarDocumento(documento) {
+  const regex = /^\d{7,8}$/; // 7 u 8 dígitos numéricos
+  return regex.test(documento);
+}
+
 //REGISTRO DE USUARIO
 document.getElementById("formUsuario").addEventListener("submit", async (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
   const userData = Object.fromEntries(formData.entries());
+
+  // Validaciones
+  if (!validarEmail(userData.email)) {
+    alert("Por favor, ingrese un email válido");
+    return;
+  }
+
+  if (!validarPassword(userData.password)) {
+    alert("La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y puede incluir caracteres especiales");
+    return;
+  }
+
+  if (!validarTelefono(userData.telefono)) {
+    alert("El teléfono debe tener 10 dígitos numéricos");
+    return;
+  }
+
+  if (!validarDocumento(userData.documento)) {
+    alert("El documento debe tener 7 u 8 dígitos numéricos");
+    return;
+  }
 
   userData.administrador = userData.administrador === "true";
 
